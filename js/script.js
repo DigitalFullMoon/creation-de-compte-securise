@@ -67,3 +67,25 @@ function validerConditions() {
     }
 }
 
+// Écouteurs d'événements pour validation en direct (formulaire réactif)
+nom.addEventListener("input", () => validerChamp(nom, regexNom, "Format : Prénom Nom (min 2 mots)", erreurNom));
+mail.addEventListener("input", () => validerChamp(mail, regexMail, "Email valide (domaine zcceptés : gmail, yahoo, outlook, hotmail)", erreurMail));
+password.addEventListener("input", validerPassword);
+securite.addEventListener("input", () => validerChamp(securite, regexCode, "Format attendu : ABC-123-XYZ", erreurSecurite));
+acceptTerms.addEventListener("change", validerConditions);
+
+// Validation globale à la soumission du formulaire
+formulaire.addEventListener("submit", function (e) {
+    e.preventDefault(); // Bloque la soumission tant que tout n'est pas OK
+
+    const champNomOK = validerChamp(nom, regexNom, "Format : Prénom Nom (min 2 mots)", erreurNom);
+    const mailOK = validerChamp(mail, regexMail, "Email valide (domaine zcceptés : gmail, yahoo, outlook, hotmail)", erreurMail);
+    const passwordOK = validerPassword();
+    const codeOK = validerChamp(securite, regexCode, "Format attendu : ABC-123-XYZ", erreurSecurite);
+    const conditionsOK = validerConditions();
+
+    if (champNomOK && mailOK && passwordOK && codeOK && conditionsOK) {
+        alert("Compte créé avec succès !");
+        formulaire.submit();
+    }
+});
