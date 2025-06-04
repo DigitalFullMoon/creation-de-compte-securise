@@ -1,0 +1,58 @@
+/* Police de caractere */
+@font-face {
+    font-family: 'LuckiestGuy';
+    src: url('../font/LuckiestGuy-Regular.ttf') format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1 {
+    font-family: 'LuckiestGuy', sans-serif;
+    font-size: 3em;
+    color: #94178a;
+    text-align: center;
+    
+}
+
+/* Couleur de background */
+body {
+    background-color: #efcff8;
+}
+
+.form-control {                 /* les inputs */
+    background-color: #f3e0f4 !important;
+}
+
+.formulaire {
+    background-color: white;        
+    border-radius: 15px;            
+    padding: 30px;                 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/*Le bouton*/
+.bouton-custom {
+    background-color: #a21db7;    
+    color: white;                 
+    border: 1px solid blue;       
+    transition: background-color 0.3s ease;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 10px;
+    border-radius: 10px; 
+
+}
+
+.bouton-custom:hover {  /* au survol */
+    background-color: #820b9a;
+    color: white; 
+    border: 1px solid blue;
+}
+
+/* la checkbox */
+.form-check-input {
+    border: 1px solid grey !important; /* fine bordure noire */
+    width: 1.2em;
+    height: 1.2em;
+}
+
