@@ -10,34 +10,34 @@
     <link rel="stylesheet" href="css/style.css">
 
 
-    <title>Document</title>
+    <title>Création de compte sécurisé</title>
     <script src="js/bootstrap.bundle.js" defer></script>
     <script src="js/script.js" defer></script>
 </head>
 
 
 <body>
-   
+
     <div class="container my-5">
-        <form action="#" method="get" class="mx-auto formulaire" >
-             <h1 class="text-center my-2 text-uppercase fw-bold">Création de compte sécurisé</h1>
+        <form action="#" method="get" class="mx-auto formulaire">
+            <h1 class="text-center mt-2 mb-5 text-uppercase fw-bold">Création de compte sécurisé</h1>
 
             <!-- Nom -->
-            <div class="mb-3">
+            <div class="mb-4">
                 <label for="nom" class="form-label">Nom Complet *</label>
                 <input type="text" name="nom" id="nom" class="form-control">
                 <span id="erreurNom" class="text-danger small"></span>
             </div>
 
             <!-- Email -->
-            <div class="mb-3">
-                <label for="mail" class="form-label">Email</label>
+            <div class="mb-4">
+                <label for="mail" class="form-label">Email*</label>
                 <input type="email" name="mail" id="mail" class="form-control">
                 <span id="erreurMail" class="text-danger small"></span>
             </div>
 
             <!-- Mot de passe -->
-            <div class="mb-3">
+            <div class="mb-4">
                 <label for="password" class="form-label">Mot de passe *</label>
                 <input type="password" name="password" id="password" class="form-control">
                 <span id="erreurPassword" class="text-danger small"></span>
@@ -45,17 +45,16 @@
             </div>
 
             <!-- Code de sécurité -->
-            <div class="mb-3">
+            <div class="mb-4">
                 <label for="securite" class="form-label">Code de sécurité *</label>
-                <input type="text" name="securite" id="securite" placeholder="ABC-123-XYZ" class="form-control"
-            >
+                <input type="text" name="securite" id="securite" placeholder="ABC-123-XYZ" class="form-control">
                 <span id="erreurSecurite" class="text-danger small"></span>
             </div>
 
             <!-- Checkbox -->
             <div class="form-check mb-3">
-                <input class="form-check-input" type="checkbox" id="acceptTerms" >
-                <label class="form-check-label" for="acceptTerms">                 J’accepte les conditions d’utilisation*
+                <input class="form-check-input" type="checkbox" id="acceptTerms">
+                <label class="form-check-label" for="acceptTerms"> J’accepte les conditions d’utilisation*
                 </label>
                 <span id="erreurAcceptTerms" class="text-danger small"></span>
             </div>

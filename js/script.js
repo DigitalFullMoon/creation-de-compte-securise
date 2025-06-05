@@ -73,6 +73,28 @@ mail.addEventListener("input", () => validerChamp(mail, regexMail, "Email valide
 password.addEventListener("input", validerPassword);
 securite.addEventListener("input", () => validerChamp(securite, regexCode, "Format attendu : ABC-123-XYZ", erreurSecurite));
 acceptTerms.addEventListener("change", validerConditions);
+// Mise en majuscule des premières lettres dans le champ "nom"
+nom.addEventListener("input", () => {
+    let mots = nom.value.toLowerCase().split(" ");
+    nom.value = mots.map(m => m.charAt(0).toUpperCase() + m.slice(1)).join(" ");
+    validerChamp(nom, regexNom, "Format : Prénom Nom (min 2 mots)", erreurNom);
+});
+
+// Formatage automatique du champ "securite" en ABC-123-XYZ
+securite.addEventListener("input", () => {
+    let valeur = securite.value.toUpperCase().replace(/[^A-Z0-9]/g, ""); // enlève tout sauf lettres/chiffres
+    let partie1 = valeur.slice(0, 3);
+    let partie2 = valeur.slice(3, 6);
+    let partie3 = valeur.slice(6, 9);
+
+    let resultat = partie1;
+    if (valeur.length > 3) resultat += "-" + partie2;
+    if (valeur.length > 6) resultat += "-" + partie3;
+
+    securite.value = resultat;
+    validerChamp(securite, regexCode, "Format attendu : ABC-123-XYZ", erreurSecurite);
+});
+
 
 // Validation globale à la soumission du formulaire
 formulaire.addEventListener("submit", function (e) {

@@ -12,6 +12,7 @@ h1 {
     color: #94178a;
     text-align: center;
     
+    
 }
 
 /* Couleur de background */
@@ -24,6 +25,8 @@ body {
 }
 
 .formulaire {
+    width: 800px;
+    margin: 0 auto;
     background-color: white;        
     border-radius: 15px;            
     padding: 30px;                 
@@ -55,4 +58,8 @@ body {
     width: 1.2em;
     height: 1.2em;
 }
+.form-check-input:hover {
+    border-color: #a21db7 !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
+}
